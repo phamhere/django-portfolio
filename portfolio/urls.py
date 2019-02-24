@@ -19,8 +19,10 @@ from django.urls import path
 from django.conf import settings
 # static files app that allows to serve up media files magically
 from django.conf.urls.static import static
+import jobs.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', jobs.views.home, name='home')
     # the root is where to look and the url is url path to be used
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
