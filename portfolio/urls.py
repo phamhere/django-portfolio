@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import include, path
 # importing the settings from settings.py file
 from django.conf import settings
 # static files app that allows to serve up media files magically
@@ -23,6 +23,7 @@ import jobs.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', jobs.views.home, name='home')
+    path('', jobs.views.home, name='home'),
+    path('blog/', include('blog.urls'))
     # the root is where to look and the url is url path to be used
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
