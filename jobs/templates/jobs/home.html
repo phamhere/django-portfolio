@@ -1,4 +1,5 @@
 <!doctype html>
+{% load static %}
 <html lang="en">
 
 <head>
@@ -46,7 +47,7 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
           <a class="nav-item nav-link" href="#">Twitter</a>
-          <a class="nav-item nav-link" href="#">Resume</a>
+          <a class="nav-item nav-link" href="{% static 'Peter Pham Resume.pdf' %}">Resume</a>
           <a class="nav-item nav-link" href="#">Blog</a>
         </div>
       </div>
@@ -62,6 +63,7 @@
         <p>
           <a href="#" class="btn btn-primary my-2">Email Me</a>
         </p>
+        <img src="{% static 'peter pham.jpg' %}" height="300">
       </div>
     </section>
 
